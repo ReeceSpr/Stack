@@ -1,18 +1,10 @@
 package com.boltx.stack;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.animation.PathInterpolatorCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.transition.Fade;
-import android.transition.Scene;
-import android.transition.TransitionManager;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.Interpolator;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +12,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        animate();
+        //setViewPagerFragment();
+        //animateOnStart();
     }
 
-    void animate(){
+    void addButtonOnClick (){
+
+    }
+
+    void setViewPagerFragment(){
+        ViewPager viewPager = findViewById(R.id.viewpager_main);
+        PagerAdapter pagerAdapter = new MainPageAdaptor(getSupportFragmentManager());
+        viewPager.setAdapter(pagerAdapter);
+
+    }
+    /*
+    void animateOnStart(){
         ImageView logo = findViewById(R.id.imageView);
         Fade mFade;
         ViewGroup rootView;
@@ -39,5 +43,5 @@ public class MainActivity extends AppCompatActivity {
         TransitionManager.beginDelayedTransition(rootView, mFade);
 
         logo.animate().translationY(2000).setDuration(1000);
-    }
+    }*/
 }

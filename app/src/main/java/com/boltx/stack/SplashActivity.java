@@ -28,7 +28,6 @@ public class SplashActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         animate();
-        SystemClock.sleep(5000);
         finish();
     }
     private void animate() {
